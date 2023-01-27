@@ -54,6 +54,23 @@ class DhonBase
      */
     public $bearerTokenSessionExpiration;
 
+    /**
+     * User's in encrypt.
+     *
+     * @var mixed
+     */
+    public $userSession;
+
+    /**
+     * @var string
+     */
+    public $redirectSession;
+
+    /**
+     * @var mixed
+     */
+    public $bearerTokenSession;
+
     public function __construct()
     {
         $this->assets = getenv('app.assetsURL');
@@ -64,5 +81,15 @@ class DhonBase
         $this->redirectSessionExpiration = getenv('session.redirectExpiration');
         $this->bearerTokenSessionName = getenv('session.bearerName');
         $this->bearerTokenSessionExpiration = getenv('session.bearerExpiration');
+
+        $this->_initSession();
+    }
+
+    private function _initSession()
+    {
+        //~ Sessions
+        $this->userSession = isset($_SESSION[$this->userSessionName]) ? $_SESSION[$this->userSessionName] : null;
+        $this->redirectSession = isset($_SESSION[$this->redirectSessionName]) ? $_SESSION[$this->redirectSessionName] : getenv('app.baseURL');
+        $this->bearerTokenSession = isset($_SESSION[$this->bearerTokenSessionName]) ? $_SESSION[$this->bearerTokenSessionName] : null;
     }
 }
