@@ -14,5 +14,6 @@
             "email": "dhonstudio@yahoo.com"
         }
     ],
+    "minimum-stability": "dev",
     "require": {}
 }
