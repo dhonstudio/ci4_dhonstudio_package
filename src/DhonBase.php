@@ -2,11 +2,9 @@
 
 namespace Dhonstudio\Ci4basec;
 
-require 'vendor/autoload.php';
-
 class DhonBase
 {
-    protected $assets;
+    public $assets;
 
     public function __construct()
     {
