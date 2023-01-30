@@ -1,11 +1,11 @@
 {
-    "name": "dhonstudio/ci4basec",
+    "name": "dhonstudio/dhonlib",
     "description": "This is CI4 BaseController package.",
     "type": "library",
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Dhonstudio\\Ci4basec\\": "src/"
+            "Dhonstudio\\DhonLib\\": "src/"
         }
     },
     "authors": [
